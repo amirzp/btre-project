@@ -1,11 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Listings
+from django.core.paginator import Page, PageNotAnInteger, Paginator
 
 
 def listings(request):
     listings = Listings.objects.all()
+
+    paginator = Paginator(listings, 3)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
-        'listings': listings
+        'listings': page_obj
     }
     return render(request, 'listings/listings.html', context=context)
 
