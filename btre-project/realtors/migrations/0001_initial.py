@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('descriptions', models.TextField(blank=True)),
                 ('email', models.CharField(max_length=50)),
                 ('phone', models.CharField(max_length=20)),
-                ('is_mvp', models.BinaryField(default=False)),
+                ('is_mvp', models.BooleanField(default=False)),
                 ('hire_date', models.DateTimeField(blank=True, default=datetime.datetime.now)),
             ],
         ),
