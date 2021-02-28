@@ -10,7 +10,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-          <li 
+          <li
             {% if '/' == request.path %}
               class="nav-item active mr-3"
             {% else %}
@@ -19,7 +19,7 @@
           >
             <a class="nav-link" href="{% url 'index' %}">Home</a>
           </li>
-          <li 
+          <li
             {% if '/about/' == request.path %}
               class="nav-item active mr-3"
             {% else %}
@@ -29,7 +29,7 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item mr-3">
-            <a class="nav-link" href="listings.html">Featured Listings</a>
+            <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
           </li>
         </ul>
 
