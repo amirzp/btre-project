@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from listings.models import Listings
+from listings import choices
 from realtors.models import Realtor
 
 
@@ -9,7 +10,10 @@ def index(request):
         ).filter(is_published=True)[:3]
 
     context = {
-        'listings': lisitngs
+        'listings': lisitngs,
+        'state_choices': choices.state_choices,
+        'bedroom_choices': choices.bedroom_choices,
+        'price_choices': choices.price_choices
     }
     return render(request, 'pages/index.html', context)
 

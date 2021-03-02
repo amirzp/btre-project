@@ -154,4 +154,5 @@ dmypy.json
 
 # Add with me
 /static
-/btre_resources
+btre_resources/
+.vscode/
